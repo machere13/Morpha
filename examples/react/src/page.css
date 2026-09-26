@@ -1,4 +1,4 @@
-body { margin: 0; background: var(--dreadnought-color-surface-default); color: var(--dreadnought-color-text-primary); font: 16px/1.5 system-ui, sans-serif; }
+body { margin: 0; background: var(--dreadnought-color-surface-canvas); color: var(--dreadnought-color-text-primary); font: 16px/1.5 system-ui, sans-serif; }
 main { max-width: 720px; margin: 64px auto; padding: 0 24px; }
 section { padding: 20px 0; border-bottom: 1px solid var(--dreadnought-color-border-subtle); }
 h1 { margin-bottom: 24px; }

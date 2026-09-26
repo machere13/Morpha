@@ -69,13 +69,14 @@ describe('default theme', () => {
       [...source.matchAll(/(--dreadnought-[\w-]+):\s*([^;]+);/g)].map(([, name, value]) => [name, value.trim()]),
     );
     const global = declarations(css('tokens/global/colors.tokens.css'));
-    expect(global.get('--dreadnought-color-action-primary')).toBe('rgb(23 23 23 / 100%)');
-    expect(global.get('--dreadnought-color-action-secondary')).toBe('rgb(64 64 64 / 100%)');
-    expect(global.get('--dreadnought-color-action-secondary-hover')).toBe('rgb(82 82 82 / 100%)');
-    expect(global.get('--dreadnought-color-text-primary')).toBe('rgb(23 23 23 / 100%)');
-    expect(global.get('--dreadnought-color-status-error')).toBe('rgb(180 35 24 / 100%)');
-    expect(global.get('--dreadnought-color-status-warning')).toBe('rgb(161 79 0 / 100%)');
-    expect(global.get('--dreadnought-color-status-success')).toBe('rgb(24 121 78 / 100%)');
+    for (const role of [
+      'surface-canvas', 'surface-default', 'surface-subtle', 'surface-hover',
+      'surface-selected', 'surface-selected-hover', 'surface-inverse',
+      'action-primary', 'action-secondary', 'text-primary', 'text-inverse',
+      'status-error', 'status-warning', 'status-success',
+    ]) {
+      expect(global.has(`--dreadnought-color-${role}`), `${role} needs a global color`).toBe(true);
+    }
     expect(global.has('--dreadnought-color-secondary')).toBe(false);
 
     const button = declarations(css('tokens/components/Controls/Button/colors.tokens.css'));
@@ -90,9 +91,10 @@ describe('default theme', () => {
     const textArea = declarations(css('tokens/components/Fields/TextArea/colors.tokens.css'));
     expect(textArea.get('--dreadnought-text-area-text')).toBe('var(--dreadnought-color-text-primary)');
     const tabs = declarations(css('tokens/components/Navigation/Tabs/colors.tokens.css'));
-    expect(tabs.get('--dreadnought-tabs-list-bg')).toBe('var(--dreadnought-color-surface-hover)');
-    expect(tabs.get('--dreadnought-tabs-tab-bg-selected')).toBe('var(--dreadnought-color-action-primary)');
-    expect(tabs.get('--dreadnought-tabs-tab-fg-selected')).toBe('var(--dreadnought-color-text-on-action-primary)');
+    expect(tabs.get('--dreadnought-tabs-list-bg')).toBe('var(--dreadnought-color-surface-default)');
+    expect(tabs.get('--dreadnought-tabs-tab-bg')).toBe('transparent');
+    expect(tabs.get('--dreadnought-tabs-tab-bg-selected')).toBe('var(--dreadnought-color-surface-selected)');
+    expect(tabs.get('--dreadnought-tabs-tab-fg-selected')).toBe('var(--dreadnought-color-text-primary)');
   });
 
   it('references only defined global tokens from component tokens', () => {

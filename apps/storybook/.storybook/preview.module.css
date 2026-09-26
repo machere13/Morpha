@@ -3,9 +3,9 @@
 }
 
 .dark {
-  color: var(--dreadnought-color-text-on-action-primary);
+  color: var(--dreadnought-color-text-primary);
 }
 
 .light {
-  color: var(--dreadnought-color-text-primary);
+  color: var(--dreadnought-color-text-inverse);
 }

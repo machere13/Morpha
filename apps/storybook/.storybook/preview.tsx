@@ -14,9 +14,9 @@ const preview: Preview = {
     controls: { expanded: true },
     backgrounds: {
       options: {
-        graphite: { name: 'Графит', value: 'var(--dreadnought-color-action-primary)' },
-        gray: { name: 'Серый', value: 'var(--dreadnought-color-action-secondary)' },
-        white: { name: 'Белый', value: 'var(--dreadnought-color-surface-default)' },
+        graphite: { name: 'Графит', value: 'var(--dreadnought-color-surface-canvas)' },
+        gray: { name: 'Серый', value: 'var(--dreadnought-color-surface-subtle)' },
+        white: { name: 'Белый', value: 'var(--dreadnought-color-surface-inverse)' },
       },
     },
   },
