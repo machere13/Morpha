@@ -3,7 +3,7 @@ import type { ButtonAdapterProps } from '@dreadnought/react/unstyled';
 import { buttonPresentation } from '#presentation/Controls/Button/buttonPresentation.ts';
 
 export type ButtonProps = ButtonAdapterProps & {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outlined' | 'ghosted';
 };
 
 export function Button({ variant = 'primary', className, ...props }: ButtonProps) {

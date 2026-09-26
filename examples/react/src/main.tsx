@@ -18,6 +18,8 @@ function App() {
           <Button onClick={() => setCount((value) => value + 1)}>Нажать</Button>
           <Button disabled>Недоступна</Button>
           <Button loading>Загрузка</Button>
+          <Button variant="outlined">Контурная</Button>
+          <Button variant="ghosted">Без фона</Button>
         </div>
       </section>
       <section className="other-theme">

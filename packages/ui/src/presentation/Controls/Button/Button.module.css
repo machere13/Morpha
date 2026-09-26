@@ -17,13 +17,28 @@
   }
 
   .primary {
+    --dreadnought-button-border-color: var(--dreadnought-button-primary-border-color);
+    --dreadnought-button-focus-ring: var(--dreadnought-button-primary-focus-ring);
     background: var(--dreadnought-button-primary-bg);
     color: var(--dreadnought-button-primary-fg);
   }
 
   .secondary {
+    --dreadnought-button-border-color: var(--dreadnought-button-secondary-border-color);
     background: var(--dreadnought-button-secondary-bg);
     color: var(--dreadnought-button-secondary-fg);
+  }
+
+  .outlined {
+    --dreadnought-button-border-color: var(--dreadnought-button-outlined-border-color);
+    background: var(--dreadnought-button-outlined-bg);
+    color: var(--dreadnought-button-outlined-fg);
+  }
+
+  .ghosted {
+    --dreadnought-button-border-color: var(--dreadnought-button-ghosted-border-color);
+    background: var(--dreadnought-button-ghosted-bg);
+    color: var(--dreadnought-button-ghosted-fg);
   }
 
   .button [data-slot="icon"] {
@@ -46,6 +61,14 @@
 
   .secondary:hover:not(:disabled):not([aria-disabled="true"]) {
     background: var(--dreadnought-button-secondary-bg-hover);
+  }
+
+  .outlined:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: var(--dreadnought-button-outlined-bg-hover);
+  }
+
+  .ghosted:hover:not(:disabled):not([aria-disabled="true"]) {
+    background: var(--dreadnought-button-ghosted-bg-hover);
   }
 
   .button:focus-visible {

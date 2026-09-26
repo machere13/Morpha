@@ -5,8 +5,18 @@
   --dreadnought-button-secondary-bg: var(--dreadnought-color-action-secondary);
   --dreadnought-button-secondary-fg: var(--dreadnought-color-text-on-action-secondary);
   --dreadnought-button-secondary-bg-hover: var(--dreadnought-color-action-secondary-hover);
+  --dreadnought-button-primary-border-color: var(--dreadnought-color-border-default);
+  --dreadnought-button-primary-focus-ring: var(--dreadnought-color-text-inverse);
+  --dreadnought-button-secondary-border-color: var(--dreadnought-color-border-default);
+  --dreadnought-button-outlined-bg: transparent;
+  --dreadnought-button-outlined-fg: var(--dreadnought-color-text-primary);
+  --dreadnought-button-outlined-border-color: var(--dreadnought-color-border-default);
+  --dreadnought-button-outlined-bg-hover: var(--dreadnought-color-surface-hover);
+  --dreadnought-button-ghosted-bg: transparent;
+  --dreadnought-button-ghosted-fg: var(--dreadnought-color-text-primary);
+  --dreadnought-button-ghosted-border-color: transparent;
+  --dreadnought-button-ghosted-bg-hover: var(--dreadnought-color-surface-default);
   --dreadnought-button-focus-ring: var(--dreadnought-color-focus-ring);
-  --dreadnought-button-border-color: var(--dreadnought-color-border-default);
   --dreadnought-button-spinner-border-color: currentColor;
   --dreadnought-button-spinner-border-right-color: transparent;
 }

@@ -5,6 +5,16 @@ import { Button } from '@dreadnought/ui/react';
 afterEach(cleanup);
 
 describe('Button', () => {
+  it('supports outlined and ghosted on buttons and links', () => {
+    render(<><Button variant="outlined">Edit</Button><Button href="/docs" variant="ghosted">Docs</Button></>);
+    const action = screen.getByRole('button', { name: 'Edit' });
+    expect(action.getAttribute('data-variant')).toBe('outlined');
+    expect(action.getAttribute('type')).toBe('button');
+    expect(action.classList.length).toBe(3);
+    const link = screen.getByRole('link', { name: 'Docs' });
+    expect(link.getAttribute('data-variant')).toBe('ghosted');
+    expect(link.classList.length).toBe(3);
+  });
   it('uses the primary theme variant by default', () => {
     render(<Button>Continue</Button>);
     expect(screen.getByRole('button', { name: 'Continue' }).getAttribute('data-variant')).toBe('primary');

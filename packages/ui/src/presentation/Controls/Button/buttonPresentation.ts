@@ -5,5 +5,7 @@ export const buttonPresentation = {
   variants: {
     primary: styles.primary,
     secondary: styles.secondary,
+    outlined: styles.outlined,
+    ghosted: styles.ghosted,
   },
 } as const;

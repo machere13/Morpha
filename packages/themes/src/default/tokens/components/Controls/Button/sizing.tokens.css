@@ -1,5 +1,5 @@
 :root {
-  --dreadnought-button-radius: var(--dreadnought-border-radius-x1);
+  --dreadnought-button-radius: var(--dreadnought-border-radius-pill);
   --dreadnought-button-min-height: var(--dreadnought-size-control-min-height);
   --dreadnought-button-focus-width: var(--dreadnought-border-width-x3);
   --dreadnought-button-border-width: var(--dreadnought-border-width-outline);

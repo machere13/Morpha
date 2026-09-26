@@ -59,11 +59,13 @@ function borderWidth(name: string): number {
 
 describe('default dark theme contrast', () => {
   it('separates the canvas from the primary action and keeps its label readable', () => {
+    expect(color('button-primary-bg')).toEqual([255, 255, 255]);
+    expect(color('button-secondary-bg')).toEqual([70, 70, 70]);
     expect(contrast('color-surface-canvas', 'button-primary-bg')).toBeGreaterThanOrEqual(3);
     expect(contrast('button-primary-bg', 'button-primary-fg')).toBeGreaterThanOrEqual(4.5);
     expect(borderWidth('button-border-width')).toBeGreaterThan(0);
-    expect(contrast('color-surface-inverse', 'button-border-color')).toBeGreaterThanOrEqual(3);
-    expect(contrast('color-surface-canvas', 'button-secondary-bg')).toBeGreaterThanOrEqual(3);
+    expect(contrast('color-surface-canvas', 'button-secondary-border-color')).toBeGreaterThanOrEqual(3);
+    expect(contrast('color-surface-canvas', 'button-outlined-border-color')).toBeGreaterThanOrEqual(3);
     expect(contrast('button-secondary-bg', 'button-secondary-fg')).toBeGreaterThanOrEqual(4.5);
   });
 

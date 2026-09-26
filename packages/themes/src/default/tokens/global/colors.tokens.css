@@ -6,10 +6,10 @@
   --dreadnought-color-surface-selected: rgb(86 86 86 / 100%);
   --dreadnought-color-surface-selected-hover: rgb(101 101 101 / 100%);
   --dreadnought-color-surface-inverse: rgb(255 255 255 / 100%);
-  --dreadnought-color-action-primary: rgb(232 232 232 / 100%);
-  --dreadnought-color-action-primary-hover: rgb(255 255 255 / 100%);
-  --dreadnought-color-action-secondary: rgb(105 105 105 / 100%);
-  --dreadnought-color-action-secondary-hover: rgb(122 122 122 / 100%);
+  --dreadnought-color-action-primary: rgb(255 255 255 / 100%);
+  --dreadnought-color-action-primary-hover: rgb(232 232 232 / 100%);
+  --dreadnought-color-action-secondary: rgb(70 70 70 / 100%);
+  --dreadnought-color-action-secondary-hover: rgb(88 88 88 / 100%);
   --dreadnought-color-text-primary: rgb(237 237 237 / 100%);
   --dreadnought-color-text-inverse: rgb(23 23 23 / 100%);
   --dreadnought-color-text-on-action-primary: rgb(23 23 23 / 100%);
