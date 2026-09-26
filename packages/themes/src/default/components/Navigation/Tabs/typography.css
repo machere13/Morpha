@@ -1,0 +1,11 @@
+@layer dreadnought {
+  .dreadnought-text-tabs-tab {
+    font-family: var(--dreadnought-font-family-ui);
+    font-size: var(--dreadnought-font-size-tabs-tab);
+    font-weight: var(--dreadnought-font-weight-tabs-tab);
+    line-height: var(--dreadnought-line-height-tabs-tab);
+    letter-spacing: var(--dreadnought-font-letter-spacing-tabs-tab);
+    font-style: var(--dreadnought-font-style-tabs-tab);
+    text-transform: var(--dreadnought-font-text-transform-tabs-tab);
+  }
+}

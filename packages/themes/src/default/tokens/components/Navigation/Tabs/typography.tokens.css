@@ -1,0 +1,8 @@
+:root {
+  --dreadnought-font-size-tabs-tab: var(--dreadnought-font-size-label-1);
+  --dreadnought-font-weight-tabs-tab: var(--dreadnought-font-weight-label-1);
+  --dreadnought-line-height-tabs-tab: var(--dreadnought-line-height-label-1);
+  --dreadnought-font-letter-spacing-tabs-tab: normal;
+  --dreadnought-font-style-tabs-tab: normal;
+  --dreadnought-font-text-transform-tabs-tab: none;
+}
