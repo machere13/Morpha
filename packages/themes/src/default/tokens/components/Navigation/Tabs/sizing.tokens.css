@@ -1,6 +1,6 @@
 :root {
-  --dreadnought-tabs-list-radius: var(--dreadnought-border-radius-x1);
+  --dreadnought-tabs-list-radius: var(--dreadnought-border-radius-pill);
   --dreadnought-tabs-tab-min-height: var(--dreadnought-size-control-min-height);
-  --dreadnought-tabs-tab-radius: var(--dreadnought-border-radius-x1);
+  --dreadnought-tabs-tab-radius: var(--dreadnought-border-radius-pill);
   --dreadnought-tabs-focus-width: var(--dreadnought-border-width-x2);
 }

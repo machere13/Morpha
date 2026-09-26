@@ -48,3 +48,14 @@ function ControlledExample() {
 }
 
 export const Controlled: Story = { render: () => <ControlledExample /> };
+
+export const TwoTabs: Story = {
+  render: () => <Tabs defaultValue="first">
+    <Tabs.List aria-label="Два раздела">
+      <Tabs.Tab value="first">Обзор</Tabs.Tab>
+      <Tabs.Tab value="second">Детали</Tabs.Tab>
+    </Tabs.List>
+    <Tabs.Panel value="first">Обзор компонента.</Tabs.Panel>
+    <Tabs.Panel value="second">Подробности компонента.</Tabs.Panel>
+  </Tabs>,
+};

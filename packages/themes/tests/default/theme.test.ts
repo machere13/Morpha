@@ -131,6 +131,8 @@ describe('default theme', () => {
       "@import './components/Fields/Input/index.css';",
       "@import './components/Fields/TextArea/index.css';",
       "@import './components/DataDisplay/Badge/index.css';",
+      "@import './components/DataDisplay/Mark/index.css';",
+      "@import './components/DataDisplay/Icon/index.css';",
       "@import './components/Surfaces/Card/index.css';",
       "@import './components/Navigation/Tabs/index.css';",
     ]);

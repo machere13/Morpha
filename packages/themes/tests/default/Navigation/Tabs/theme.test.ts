@@ -7,6 +7,11 @@ const tokenRoot = `${themeRoot}/tokens/components/Navigation/Tabs`;
 const read = (path: string) => readFileSync(resolve(path), 'utf8');
 
 describe('default Tabs theme', () => {
+  it('uses the shared pill radius for list and tabs', () => {
+    const sizing = read(`${tokenRoot}/sizing.tokens.css`);
+    expect(sizing).toContain('--dreadnought-tabs-list-radius: var(--dreadnought-border-radius-pill)');
+    expect(sizing).toContain('--dreadnought-tabs-tab-radius: var(--dreadnought-border-radius-pill)');
+  });
   it('defines every variable used by Tabs CSS or component tokens', () => {
     const global = readdirSync(resolve(`${themeRoot}/tokens/global`))
       .filter((file) => file.endsWith('.tokens.css'))

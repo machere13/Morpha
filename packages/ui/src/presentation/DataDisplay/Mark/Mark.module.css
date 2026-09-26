@@ -4,7 +4,7 @@
     flex: none;
     width: var(--dreadnought-mark-size);
     height: var(--dreadnought-mark-size);
-    background: var(--dreadnought-mark-color, currentColor);
+    background: var(--dreadnought-mark-color, var(--dreadnought-mark-color-default));
     vertical-align: middle;
   }
 
