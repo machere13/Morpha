@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import type { ComponentPropsWithRef, KeyboardEvent } from 'react';
 import { useTabsContext } from './TabsContext.tsx';
+import { forwardTabsRef } from './forwardTabsRef.ts';
 
 export type TabsTabAdapterProps = Omit<ComponentPropsWithRef<'button'>, 'value' | 'type'> & {
   value: string;
@@ -10,8 +11,7 @@ export function TabsTabAdapter({ value, disabled = false, onClick, onKeyDown, re
   const context = useTabsContext();
   const setRef = useCallback((element: HTMLButtonElement | null) => {
     context.registerTab(value, element, disabled);
-    if (typeof ref === 'function') ref(element);
-    else if (ref) ref.current = element;
+    return forwardTabsRef(element, ref, () => context.registerTab(value, null, disabled));
   }, [context.registerTab, disabled, ref, value]);
 
   function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
@@ -32,6 +32,11 @@ export function TabsTabAdapter({ value, disabled = false, onClick, onKeyDown, re
   return <button {...props} ref={setRef} type="button" role="tab" data-slot="tab"
     id={context.tabId(value)} aria-controls={context.panelId(value)}
     aria-selected={context.value === value} tabIndex={context.value === value ? 0 : -1}
-    disabled={disabled} onClick={(event) => { onClick?.(event); if (!event.defaultPrevented) context.setValue(value); }}
+    disabled={disabled} onClick={(event) => {
+      onClick?.(event);
+      if (event.defaultPrevented) return;
+      event.currentTarget.focus();
+      context.setValue(value);
+    }}
     onKeyDown={handleKeyDown} />;
 }

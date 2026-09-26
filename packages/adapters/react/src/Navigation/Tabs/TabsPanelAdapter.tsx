@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import type { ComponentPropsWithRef } from 'react';
 import { useTabsContext } from './TabsContext.tsx';
+import { forwardTabsRef } from './forwardTabsRef.ts';
 
 export type TabsPanelAdapterProps = Omit<ComponentPropsWithRef<'div'>, 'hidden'> & {
   value: string;
@@ -10,8 +11,7 @@ export function TabsPanelAdapter({ value, ref, ...props }: TabsPanelAdapterProps
   const context = useTabsContext();
   const setRef = useCallback((element: HTMLDivElement | null) => {
     context.registerPanel(value, element);
-    if (typeof ref === 'function') ref(element);
-    else if (ref) ref.current = element;
+    return forwardTabsRef(element, ref, () => context.registerPanel(value, null));
   }, [context.registerPanel, ref, value]);
 
   const selected = context.value === value;

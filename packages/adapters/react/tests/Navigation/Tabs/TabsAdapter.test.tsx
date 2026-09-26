@@ -68,6 +68,31 @@ describe('TabsAdapter', () => {
     expect(submit).not.toHaveBeenCalled();
   });
 
+  it('focuses a clicked tab even when click does not focus buttons natively', () => {
+    render(<Sample />);
+    const tab = screen.getByRole('tab', { name: 'C' });
+    fireEvent.click(tab);
+    expect(document.activeElement).toBe(tab);
+  });
+
+  it('runs callback-ref cleanup for tab and panel on unmount', () => {
+    let cleanedTabs = 0;
+    let cleanedPanels = 0;
+    const { unmount } = render(<TabsAdapter defaultValue="a">
+      <TabsAdapter.List aria-label="Sections">
+        <TabsAdapter.Tab value="a" ref={(element) => {
+          if (element) return () => { cleanedTabs += 1; };
+        }}>A</TabsAdapter.Tab>
+      </TabsAdapter.List>
+      <TabsAdapter.Panel value="a" ref={(element) => {
+        if (element) return () => { cleanedPanels += 1; };
+      }}>Alpha</TabsAdapter.Panel>
+    </TabsAdapter>);
+    unmount();
+    expect(cleanedTabs).toBe(1);
+    expect(cleanedPanels).toBe(1);
+  });
+
   it('does not select a disabled tab', () => {
     render(<Sample />);
     fireEvent.click(screen.getByRole('tab', { name: 'B' }));
