@@ -4,3 +4,5 @@ export { useInput } from './Fields/Input/useInput.ts';
 export type { UseInputOptions, TextInputType } from './Fields/Input/useInput.ts';
 export { useTextArea } from './Fields/TextArea/useTextArea.ts';
 export type { UseTextAreaOptions } from './Fields/TextArea/useTextArea.ts';
+export { useTabs } from './Navigation/Tabs/useTabs.ts';
+export type { UseTabsOptions, UseTabsResult } from './Navigation/Tabs/useTabs.ts';

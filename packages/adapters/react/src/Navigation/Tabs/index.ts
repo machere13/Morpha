@@ -1,0 +1,10 @@
+export { useTabs } from './useTabs.ts';
+export type { UseTabsOptions, UseTabsResult } from './useTabs.ts';
+export { TabsAdapter } from './TabsAdapter.tsx';
+export type { TabsAdapterProps } from './TabsAdapter.tsx';
+export { TabsListAdapter } from './TabsListAdapter.tsx';
+export type { TabsListAdapterProps } from './TabsListAdapter.tsx';
+export { TabsTabAdapter } from './TabsTabAdapter.tsx';
+export type { TabsTabAdapterProps } from './TabsTabAdapter.tsx';
+export { TabsPanelAdapter } from './TabsPanelAdapter.tsx';
+export type { TabsPanelAdapterProps } from './TabsPanelAdapter.tsx';
