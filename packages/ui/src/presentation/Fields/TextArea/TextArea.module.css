@@ -37,10 +37,8 @@
     color: var(--dreadnought-text-area-placeholder-text);
   }
 
-  .textArea:focus-visible {
-    outline: var(--dreadnought-text-area-focus-width) solid
-      var(--dreadnought-text-area-focus-ring);
-    outline-offset: var(--dreadnought-text-area-focus-offset);
+  .textArea:focus-visible:not([aria-invalid="true"]) {
+    border-color: var(--dreadnought-text-area-border-focus);
   }
 
   .textArea[aria-invalid="true"] {

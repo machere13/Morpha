@@ -1,5 +1,5 @@
 :root {
-  --dreadnought-mark-size: var(--dreadnought-size-inline-graphic);
+  --dreadnought-mark-size: var(--dreadnought-size-status-mark);
   --dreadnought-mark-circle-radius: var(--dreadnought-border-radius-circle);
   --dreadnought-mark-square-radius: var(--dreadnought-border-radius-square);
 }

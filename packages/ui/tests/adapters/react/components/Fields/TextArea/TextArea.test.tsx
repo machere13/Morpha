@@ -1,8 +1,21 @@
 import { cleanup, render, screen } from '@testing-library/react';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import postcss from 'postcss';
 import { afterEach, expect, it } from 'vitest';
 import { TextArea } from '@dreadnought/ui/react';
 
 afterEach(cleanup);
+
+it('focuses with one border and keeps the error border while focused', () => {
+  const css = postcss.parse(readFileSync(resolve('packages/ui/src/presentation/Fields/TextArea/TextArea.module.css'), 'utf8'));
+  const focus = css.nodes.flatMap((node) => node.type === 'atrule' ? node.nodes ?? [] : [])
+    .find((node) => node.type === 'rule' && node.selector.includes(':focus-visible'));
+  const declarations = focus?.nodes.filter((node) => node.type === 'decl') ?? [];
+  expect(declarations.some((node) => node.prop === 'border-color')).toBe(true);
+  expect(declarations.some((node) => node.prop === 'outline')).toBe(false);
+  expect(focus?.selector).toContain(':not([aria-invalid="true"])');
+});
 
 it('adds local styling without changing adapter semantics', () => {
   render(<TextArea aria-label="Notes" invalid className="custom" rows={3} />);

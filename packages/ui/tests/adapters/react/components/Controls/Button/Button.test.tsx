@@ -1,10 +1,19 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import postcss from 'postcss';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { Button } from '@dreadnought/ui/react';
 
 afterEach(cleanup);
 
 describe('Button', () => {
+  it('includes padding in the same minimum height for buttons and links', () => {
+    const css = postcss.parse(readFileSync(resolve('packages/ui/src/presentation/Controls/Button/Button.module.css'), 'utf8'));
+    const layer = css.nodes.find((node) => node.type === 'atrule');
+    const button = layer?.nodes?.find((node) => node.type === 'rule' && node.selector === '.button');
+    expect(button?.nodes?.some((node) => node.type === 'decl' && node.prop === 'box-sizing' && node.value === 'border-box')).toBe(true);
+  });
   it('supports outlined and ghosted on buttons and links', () => {
     render(<><Button variant="outlined">Edit</Button><Button href="/docs" variant="ghosted">Docs</Button></>);
     const action = screen.getByRole('button', { name: 'Edit' });

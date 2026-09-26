@@ -1,6 +1,7 @@
 @layer dreadnought {
   .button {
     display: inline-flex;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
     gap: var(--dreadnought-button-gap);
