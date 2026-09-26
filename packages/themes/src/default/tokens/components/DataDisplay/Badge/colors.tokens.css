@@ -4,4 +4,6 @@
   --dreadnought-badge-outline-bg: var(--dreadnought-color-surface-default);
   --dreadnought-badge-outline-fg: var(--dreadnought-color-text-primary);
   --dreadnought-badge-outline-border-color: var(--dreadnought-color-border-default);
+  --dreadnought-badge-ghosted-bg: transparent;
+  --dreadnought-badge-ghosted-fg: var(--dreadnought-color-text-primary);
 }

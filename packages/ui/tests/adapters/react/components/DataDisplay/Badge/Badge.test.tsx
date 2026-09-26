@@ -4,11 +4,22 @@ import { resolve } from 'node:path';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import postcss from 'postcss';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { Badge, Button } from '@dreadnought/ui/react';
+import { Badge, Button, Icon, Mark } from '@dreadnought/ui/react';
 
 afterEach(cleanup);
 
 describe('Badge', () => {
+  it('renders ghosted text and either a mark or named icon only when supplied', () => {
+    const { rerender } = render(<Badge appearance="ghosted">Ready</Badge>);
+    const badge = screen.getByText('Ready').closest('[data-ui="badge"]');
+    expect(badge?.getAttribute('data-appearance')).toBe('ghosted');
+    expect(badge?.classList.length).toBe(3);
+    expect(document.querySelector('[data-slot="icon"]')).toBeNull();
+    rerender(<Badge appearance="ghosted" icon={<Mark shape="circle" />}>Ready</Badge>);
+    expect(document.querySelector('[data-slot="icon"] [data-ui="mark"]')).not.toBeNull();
+    rerender(<Badge appearance="ghosted" icon={<Icon name="check" />}>Ready</Badge>);
+    expect(document.querySelector('[data-slot="icon"] [data-ui="icon"] svg')).not.toBeNull();
+  });
   it('styles a standalone label with the solid appearance by default', () => {
     const root = createRef<HTMLSpanElement>();
     render(<Badge ref={root} className="custom" data-test-id="release">Beta</Badge>);

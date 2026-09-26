@@ -3,7 +3,7 @@ import type { BadgeAdapterProps } from '@dreadnought/react/unstyled';
 import { badgePresentation } from '#presentation/DataDisplay/Badge/badgePresentation.ts';
 
 export type BadgeProps = BadgeAdapterProps & {
-  appearance?: 'solid' | 'outline';
+  appearance?: 'solid' | 'outline' | 'ghosted';
 };
 
 export function Badge({ appearance = 'solid', className, ...props }: BadgeProps) {

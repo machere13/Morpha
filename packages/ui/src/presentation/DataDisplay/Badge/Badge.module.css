@@ -46,6 +46,13 @@
       var(--dreadnought-badge-outline-border-color);
   }
 
+  .ghosted:not([data-mode="overlay"]),
+  .ghosted[data-mode="overlay"] > [data-slot="badge"] {
+    background: var(--dreadnought-badge-ghosted-bg);
+    color: var(--dreadnought-badge-ghosted-fg);
+    border: var(--dreadnought-badge-ghosted-border-width) solid transparent;
+  }
+
   .root[data-mode="standalone"] > [data-slot="icon"],
   .root[data-mode="overlay"] > [data-slot="badge"] > [data-slot="icon"] {
     display: inline-flex;

@@ -5,5 +5,6 @@ export const badgePresentation = {
   appearances: {
     solid: styles.solid,
     outline: styles.outline,
+    ghosted: styles.ghosted,
   },
 } as const;
