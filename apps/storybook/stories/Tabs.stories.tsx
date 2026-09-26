@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TabsAdapter } from '@dreadnought/react/unstyled';
 import { Tabs } from '@dreadnought/ui/react';
 
 const meta = {
@@ -49,14 +48,3 @@ function ControlledExample() {
 }
 
 export const Controlled: Story = { render: () => <ControlledExample /> };
-
-export const Unstyled: Story = {
-  render: () => <TabsAdapter defaultValue="first">
-    <TabsAdapter.List aria-label="Вкладки без оформления">
-      <TabsAdapter.Tab value="first">Первый</TabsAdapter.Tab>
-      <TabsAdapter.Tab value="second">Второй</TabsAdapter.Tab>
-    </TabsAdapter.List>
-    <TabsAdapter.Panel value="first">Своё оформление можно добавить через className.</TabsAdapter.Panel>
-    <TabsAdapter.Panel value="second">Поведение уже работает.</TabsAdapter.Panel>
-  </TabsAdapter>,
-};

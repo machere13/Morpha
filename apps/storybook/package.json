@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@dreadnought/react": "workspace:*",
+    "@dreadnought/themes": "workspace:*",
     "@dreadnought/ui": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

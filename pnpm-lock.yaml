@@ -44,6 +44,9 @@ importers:
       '@dreadnought/react':
         specifier: workspace:*
         version: link:../../packages/adapters/react
+      '@dreadnought/themes':
+        specifier: workspace:*
+        version: link:../../packages/themes
       '@dreadnought/ui':
         specifier: workspace:*
         version: link:../../packages/ui

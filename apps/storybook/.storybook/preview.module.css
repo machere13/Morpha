@@ -1,5 +1,11 @@
 .canvas {
-  max-width: 30rem;
   font-family: var(--dreadnought-font-family-ui);
+}
+
+.dark {
+  color: var(--dreadnought-color-text-on-action-primary);
+}
+
+.light {
   color: var(--dreadnought-color-text-primary);
 }
