@@ -1,0 +1,4 @@
+.canvas {
+  max-width: 30rem;
+  font-family: var(--dreadnought-font-family-ui);
+}

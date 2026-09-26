@@ -129,6 +129,7 @@ describe('default theme', () => {
       "@import './components/Fields/Input/index.css';",
       "@import './components/Fields/TextArea/index.css';",
       "@import './components/DataDisplay/Badge/index.css';",
+      "@import './components/Surfaces/Card/index.css';",
       "@import './components/Navigation/Tabs/index.css';",
     ]);
     for (const file of ['colors', 'spacing', 'sizing', 'typography', 'effects', 'motion']) {

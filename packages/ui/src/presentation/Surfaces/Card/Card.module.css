@@ -1,0 +1,7 @@
+@layer dreadnought {
+  .root {
+    padding: var(--dreadnought-card-padding);
+    border-radius: var(--dreadnought-card-radius);
+    background: var(--dreadnought-card-bg);
+  }
+}
