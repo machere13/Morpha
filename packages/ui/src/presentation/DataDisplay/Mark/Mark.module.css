@@ -1,0 +1,13 @@
+@layer dreadnought {
+  .mark {
+    display: inline-block;
+    flex: none;
+    width: var(--dreadnought-mark-size);
+    height: var(--dreadnought-mark-size);
+    background: var(--dreadnought-mark-color, currentColor);
+    vertical-align: middle;
+  }
+
+  .mark[data-shape="circle"] { border-radius: var(--dreadnought-mark-circle-radius); }
+  .mark[data-shape="square"] { border-radius: var(--dreadnought-mark-square-radius); }
+}

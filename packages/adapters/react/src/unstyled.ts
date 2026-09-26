@@ -6,6 +6,8 @@ export { TextAreaAdapter } from './Fields/TextArea/TextAreaAdapter.tsx';
 export type { TextAreaAdapterProps } from './Fields/TextArea/TextAreaAdapter.tsx';
 export { BadgeAdapter } from './DataDisplay/Badge/BadgeAdapter.tsx';
 export type { BadgeAdapterProps } from './DataDisplay/Badge/BadgeAdapter.tsx';
+export * from './DataDisplay/Mark/index.ts';
+export * from './DataDisplay/Icon/index.ts';
 export { CardAdapter } from './Surfaces/Card/CardAdapter.tsx';
 export type { CardAdapterProps } from './Surfaces/Card/CardAdapter.tsx';
 export { TabsAdapter } from './Navigation/Tabs/TabsAdapter.tsx';
