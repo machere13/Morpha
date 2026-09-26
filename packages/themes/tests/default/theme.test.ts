@@ -69,17 +69,22 @@ describe('default theme', () => {
       [...source.matchAll(/(--dreadnought-[\w-]+):\s*([^;]+);/g)].map(([, name, value]) => [name, value.trim()]),
     );
     const global = declarations(css('tokens/global/colors.tokens.css'));
-    expect(global.get('--dreadnought-color-action-primary')).toBe('rgb(80 70 229 / 100%)');
-    expect(global.get('--dreadnought-color-action-secondary')).toBe('rgb(238 238 253 / 100%)');
-    expect(global.get('--dreadnought-color-action-secondary-hover')).toBe('rgb(220 218 250 / 100%)');
-    expect(global.get('--dreadnought-color-text-primary')).toBe('rgb(39 34 100 / 100%)');
+    expect(global.get('--dreadnought-color-action-primary')).toBe('rgb(23 23 23 / 100%)');
+    expect(global.get('--dreadnought-color-action-secondary')).toBe('rgb(64 64 64 / 100%)');
+    expect(global.get('--dreadnought-color-action-secondary-hover')).toBe('rgb(82 82 82 / 100%)');
+    expect(global.get('--dreadnought-color-text-primary')).toBe('rgb(23 23 23 / 100%)');
     expect(global.get('--dreadnought-color-status-error')).toBe('rgb(180 35 24 / 100%)');
+    expect(global.get('--dreadnought-color-status-warning')).toBe('rgb(161 79 0 / 100%)');
+    expect(global.get('--dreadnought-color-status-success')).toBe('rgb(24 121 78 / 100%)');
     expect(global.has('--dreadnought-color-secondary')).toBe(false);
 
     const button = declarations(css('tokens/components/Controls/Button/colors.tokens.css'));
     expect(button.get('--dreadnought-button-primary-bg')).toBe('var(--dreadnought-color-action-primary)');
     expect(button.get('--dreadnought-button-secondary-bg')).toBe('var(--dreadnought-color-action-secondary)');
     expect(button.get('--dreadnought-button-secondary-bg-hover')).toBe('var(--dreadnought-color-action-secondary-hover)');
+    expect(button.get('--dreadnought-button-secondary-fg')).toBe('var(--dreadnought-color-text-on-action-secondary)');
+    const badge = declarations(css('tokens/components/DataDisplay/Badge/colors.tokens.css'));
+    expect(badge.get('--dreadnought-badge-solid-fg')).toBe('var(--dreadnought-color-text-on-action-secondary)');
     const input = declarations(css('tokens/components/Fields/Input/colors.tokens.css'));
     expect(input.get('--dreadnought-input-border-invalid')).toBe('var(--dreadnought-color-status-error)');
     const textArea = declarations(css('tokens/components/Fields/TextArea/colors.tokens.css'));
