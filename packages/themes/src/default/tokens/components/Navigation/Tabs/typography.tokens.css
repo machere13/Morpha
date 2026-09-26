@@ -5,4 +5,10 @@
   --dreadnought-font-letter-spacing-tabs-tab: normal;
   --dreadnought-font-style-tabs-tab: normal;
   --dreadnought-font-text-transform-tabs-tab: none;
+  --dreadnought-font-size-tabs-panel: var(--dreadnought-font-size-body-2);
+  --dreadnought-font-weight-tabs-panel: var(--dreadnought-font-weight-body-2);
+  --dreadnought-line-height-tabs-panel: var(--dreadnought-line-height-body-2);
+  --dreadnought-font-letter-spacing-tabs-panel: normal;
+  --dreadnought-font-style-tabs-panel: normal;
+  --dreadnought-font-text-transform-tabs-panel: none;
 }

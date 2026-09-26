@@ -4,5 +4,5 @@ export const tabsPresentation = {
   root: styles.root,
   list: styles.list,
   tab: `dreadnought-text-tabs-tab ${styles.tab}`,
-  panel: styles.panel,
+  panel: `dreadnought-text-tabs-panel ${styles.panel}`,
 } as const;

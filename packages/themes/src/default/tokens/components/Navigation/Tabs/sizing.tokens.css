@@ -1,7 +1,6 @@
 :root {
-  --dreadnought-tabs-list-border-width: var(--dreadnought-border-width-x2);
+  --dreadnought-tabs-list-radius: var(--dreadnought-border-radius-x1);
   --dreadnought-tabs-tab-min-height: var(--dreadnought-size-control-min-height);
-  --dreadnought-tabs-tab-indicator-width: var(--dreadnought-border-width-x2);
   --dreadnought-tabs-tab-radius: var(--dreadnought-border-radius-x1);
   --dreadnought-tabs-focus-width: var(--dreadnought-border-width-x2);
 }

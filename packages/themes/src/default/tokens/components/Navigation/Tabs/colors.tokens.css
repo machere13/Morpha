@@ -1,9 +1,10 @@
 :root {
-  --dreadnought-tabs-list-border-color: var(--dreadnought-color-border-default);
-  --dreadnought-tabs-tab-bg: var(--dreadnought-color-surface-default);
-  --dreadnought-tabs-tab-bg-hover: var(--dreadnought-color-surface-hover);
+  --dreadnought-tabs-list-bg: var(--dreadnought-color-surface-hover);
+  --dreadnought-tabs-tab-bg: var(--dreadnought-color-surface-hover);
+  --dreadnought-tabs-tab-bg-hover: var(--dreadnought-color-surface-default);
+  --dreadnought-tabs-tab-bg-selected: var(--dreadnought-color-action-primary);
+  --dreadnought-tabs-tab-bg-selected-hover: var(--dreadnought-color-action-primary-hover);
   --dreadnought-tabs-tab-fg: var(--dreadnought-color-text-primary);
-  --dreadnought-tabs-tab-fg-selected: var(--dreadnought-color-action-primary);
-  --dreadnought-tabs-tab-indicator-color: var(--dreadnought-color-action-primary);
+  --dreadnought-tabs-tab-fg-selected: var(--dreadnought-color-text-on-action-primary);
   --dreadnought-tabs-focus-ring: var(--dreadnought-color-focus-ring);
 }

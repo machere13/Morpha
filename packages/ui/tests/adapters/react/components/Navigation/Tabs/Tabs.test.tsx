@@ -25,6 +25,7 @@ describe('Tabs', () => {
     expect(plain.className).toBe('');
     expect(screen.getByRole('tablist', { name: 'Ready' }).className).toContain('own-list');
     expect(screen.getByRole('tabpanel', { name: 'A' }).className).toContain('own-panel');
+    expect(screen.getByRole('tabpanel', { name: 'A' }).className).toContain('dreadnought-text-tabs-panel');
     expect(screen.getByRole('tab', { name: 'A' }).closest('[data-ui="tabs"]')?.className).toContain('own-root');
     expect(screen.getByRole('tab', { name: 'B' }).closest('[data-ui="tabs"]')?.className).toBe('');
   });

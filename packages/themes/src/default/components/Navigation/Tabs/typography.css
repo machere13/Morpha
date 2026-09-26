@@ -8,4 +8,14 @@
     font-style: var(--dreadnought-font-style-tabs-tab);
     text-transform: var(--dreadnought-font-text-transform-tabs-tab);
   }
+
+  .dreadnought-text-tabs-panel {
+    font-family: var(--dreadnought-font-family-ui);
+    font-size: var(--dreadnought-font-size-tabs-panel);
+    font-weight: var(--dreadnought-font-weight-tabs-panel);
+    line-height: var(--dreadnought-line-height-tabs-panel);
+    letter-spacing: var(--dreadnought-font-letter-spacing-tabs-panel);
+    font-style: var(--dreadnought-font-style-tabs-panel);
+    text-transform: var(--dreadnought-font-text-transform-tabs-panel);
+  }
 }

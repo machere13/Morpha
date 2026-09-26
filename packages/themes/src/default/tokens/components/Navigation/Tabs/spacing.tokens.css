@@ -1,5 +1,6 @@
 :root {
-  --dreadnought-tabs-list-gap: var(--dreadnought-spacing-x2);
+  --dreadnought-tabs-list-gap: var(--dreadnought-spacing-x1);
+  --dreadnought-tabs-list-padding: var(--dreadnought-spacing-x1);
   --dreadnought-tabs-tab-padding-y: var(--dreadnought-spacing-x2);
   --dreadnought-tabs-tab-padding-x: var(--dreadnought-spacing-x4);
   --dreadnought-tabs-panel-padding-block: var(--dreadnought-spacing-x4);

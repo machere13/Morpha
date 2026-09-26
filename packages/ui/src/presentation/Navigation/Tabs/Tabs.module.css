@@ -4,18 +4,22 @@
   }
 
   .list {
-    display: flex;
+    display: inline-flex;
+    max-width: 100%;
     gap: var(--dreadnought-tabs-list-gap);
-    border-bottom: var(--dreadnought-tabs-list-border-width) solid
-      var(--dreadnought-tabs-list-border-color);
+    padding: var(--dreadnought-tabs-list-padding);
+    border-radius: var(--dreadnought-tabs-list-radius);
+    background: var(--dreadnought-tabs-list-bg);
   }
 
   .tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: var(--dreadnought-tabs-tab-min-height);
     padding: var(--dreadnought-tabs-tab-padding-y)
       var(--dreadnought-tabs-tab-padding-x);
     border: 0;
-    border-bottom: var(--dreadnought-tabs-tab-indicator-width) solid transparent;
     border-radius: var(--dreadnought-tabs-tab-radius);
     background: var(--dreadnought-tabs-tab-bg);
     color: var(--dreadnought-tabs-tab-fg);
@@ -27,8 +31,12 @@
   }
 
   .tab[aria-selected="true"] {
+    background: var(--dreadnought-tabs-tab-bg-selected);
     color: var(--dreadnought-tabs-tab-fg-selected);
-    border-bottom-color: var(--dreadnought-tabs-tab-indicator-color);
+  }
+
+  .tab[aria-selected="true"]:hover:not(:disabled) {
+    background: var(--dreadnought-tabs-tab-bg-selected-hover);
   }
 
   .tab:focus-visible {

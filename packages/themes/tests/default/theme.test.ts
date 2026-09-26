@@ -89,6 +89,10 @@ describe('default theme', () => {
     expect(input.get('--dreadnought-input-border-invalid')).toBe('var(--dreadnought-color-status-error)');
     const textArea = declarations(css('tokens/components/Fields/TextArea/colors.tokens.css'));
     expect(textArea.get('--dreadnought-text-area-text')).toBe('var(--dreadnought-color-text-primary)');
+    const tabs = declarations(css('tokens/components/Navigation/Tabs/colors.tokens.css'));
+    expect(tabs.get('--dreadnought-tabs-list-bg')).toBe('var(--dreadnought-color-surface-hover)');
+    expect(tabs.get('--dreadnought-tabs-tab-bg-selected')).toBe('var(--dreadnought-color-action-primary)');
+    expect(tabs.get('--dreadnought-tabs-tab-fg-selected')).toBe('var(--dreadnought-color-text-on-action-primary)');
   });
 
   it('references only defined global tokens from component tokens', () => {
@@ -168,5 +172,8 @@ describe('default theme', () => {
     expect(buttonTypography).toContain('--dreadnought-font-text-transform-button: none');
     expect(typography).toContain('text-transform: var(--dreadnought-font-text-transform-button)');
     expect(globalSpacing).not.toMatch(/--dreadnought-[\w-]*button:/);
+    const tabsTypography = css('components/Navigation/Tabs/typography.css');
+    expect(tabsTypography).toContain('.dreadnought-text-tabs-panel');
+    expect(tabsTypography).toContain('font-size: var(--dreadnought-font-size-tabs-panel)');
   });
 });
