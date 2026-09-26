@@ -33,6 +33,9 @@
   }
 
   .input [data-slot="visibility-toggle"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex: none;
     padding: var(--dreadnought-input-toggle-padding);
     border: none;
@@ -42,10 +45,8 @@
     cursor: var(--dreadnought-input-toggle-cursor);
   }
 
-  .input:focus-within {
-    outline: var(--dreadnought-input-focus-width) solid
-      var(--dreadnought-input-focus-ring);
-    outline-offset: var(--dreadnought-input-focus-offset);
+  .input:focus-within:not([data-invalid]) {
+    border-color: var(--dreadnought-input-border-focus);
   }
 
   .input[data-invalid] {

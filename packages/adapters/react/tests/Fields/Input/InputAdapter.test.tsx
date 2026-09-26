@@ -81,3 +81,13 @@ it('disables password visibility control with a disabled input', () => {
   render(<InputAdapter aria-label="Password" type="password" disabled />);
   expect(screen.getByRole('button', { name: 'Show password' }).hasAttribute('disabled')).toBe(true);
 });
+
+it('accepts custom password visibility content while retaining accessible labels', async () => {
+  const user = userEvent.setup();
+  render(<InputAdapter type="password" aria-label="Password" passwordVisibilityContent={{ show: <svg data-test-id="eye" />, hide: <svg data-test-id="eye-off" /> }} />);
+  const toggle = screen.getByRole('button', { name: 'Show password' });
+  expect(toggle.querySelector('[data-test-id="eye"]')).not.toBeNull();
+  await user.click(toggle);
+  expect(screen.getByRole('button', { name: 'Hide password' }).querySelector('[data-test-id="eye-off"]')).not.toBeNull();
+  expect(toggle.textContent).toBe('');
+});

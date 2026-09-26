@@ -1,12 +1,16 @@
 import { forwardRef } from 'react';
+import type { ReactNode } from 'react';
 import { useInput } from './useInput.ts';
 import type { UseInputOptions } from './useInput.ts';
 
-export type InputAdapterProps = UseInputOptions;
+export type InputAdapterProps = UseInputOptions & {
+  passwordVisibilityContent?: { show: ReactNode; hide: ReactNode };
+};
 
 export const InputAdapter = forwardRef<HTMLInputElement, InputAdapterProps>(
-  function InputAdapter({ className, style, ...options }, ref) {
-    const { inputProps, state, visibilityButtonProps } = useInput(options);
+  function InputAdapter({ className, style, passwordVisibilityContent, ...options }, ref) {
+    const { inputProps, state, visibilityButtonProps, isPasswordVisible } = useInput(options);
+    const visibilityContent = passwordVisibilityContent?.[isPasswordVisible ? 'hide' : 'show'] ?? visibilityButtonProps?.children;
     const isInvalid = state.invalid || inputProps['aria-invalid'] === true || inputProps['aria-invalid'] === 'true';
 
     return (
@@ -26,7 +30,7 @@ export const InputAdapter = forwardRef<HTMLInputElement, InputAdapterProps>(
           <button
             {...visibilityButtonProps}
             data-slot="visibility-toggle"
-          />
+          >{visibilityContent}</button>
         )}
       </div>
     );

@@ -12,6 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const Disabled: Story = { args: { disabled: true } };
+export const Invalid: Story = { args: { invalid: true, placeholder: 'Неверное значение' } };
 export const Password: Story = {
   args: {
     type: 'password',
